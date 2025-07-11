@@ -5,10 +5,9 @@ import { Router } from 'react-router-dom'
 // import { Routes } from 'react-router-dom'
 import About from './pages/About'
 import Home from './pages/Home'
-import "./app.css"
+import "./App.css"
 import Navbar from './components/Navbar'
 import Project from './pages/project'
-import VideoSection from './components/VideoSection'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Contact from './pages/Contact'
@@ -35,7 +34,7 @@ const App = () => {
       <About />
       <Project />
       {/* <h2>Let's Connect</h2> */}
-      <button class="button-15" role="button">Hire Me</button>
+      <button className="button-15" role="button">Hire Me</button>
       <Contact />
       <SocialIcons /><br />
       <Toaster />

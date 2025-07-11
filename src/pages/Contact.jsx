@@ -6,15 +6,16 @@ const Contact = () => {
  const form = useRef();
   const [loading, setLoading] = useState(false);
 
+
   const sendEmail = (e) => {
     e.preventDefault();
     setLoading(true); // Start loading
 
     emailjs.sendForm(
-      'service_6p2ybam',
-      'template_z31uuxc',
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
       form.current,
-      'wdy_4oVczcyk-45tv'
+      import.meta.env.VITE_PUBLIC_API
     ).then(
       (result) => {
         toast.success("Message sent successfully!");
@@ -23,7 +24,7 @@ const Contact = () => {
       },
       (error) => {
         toast.error("Failed to send message.");
-        // console.error(error);
+        // console.error("❌ Email send failed:", error.text || error);
         setLoading(false); // Stop loading
       }
     );

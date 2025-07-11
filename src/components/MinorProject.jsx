@@ -12,7 +12,7 @@ const MinorProject = ({projectDetail}) => {
         <h2>{projectDetail.title}</h2>
         <p>{projectDetail.description}</p>
         <div style={{border:"none" , gap:"20px"}}>
-                <div onClick={() => { console.log('opening video'); setShowYtVideo(true)}} style={{cursor: "pointer"}} >
+                <div onClick={() => {setShowYtVideo(true)}} style={{cursor: "pointer"}} >
                     <img src="/youtube.png.png" alt="youtube" width={20} />
                     <p>How it works?</p>
                 </div>

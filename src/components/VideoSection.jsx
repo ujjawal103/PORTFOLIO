@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 
 export default function VideoSection({handleClose , youtubeLink}) {
-  console.log('VideoSection mounted');
+  
 
  return ReactDOM.createPortal(
     <div>
