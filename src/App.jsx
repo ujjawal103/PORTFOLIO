@@ -7,7 +7,7 @@ import About from './pages/About'
 import Home from './pages/Home'
 import "./App.css"
 import Navbar from './components/Navbar'
-import Project from './pages/project'
+import Project from './pages/Project';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Contact from './pages/Contact'
