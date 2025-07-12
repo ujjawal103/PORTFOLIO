@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Skill from './Skill'
 import Tilt from 'react-parallax-tilt';
 import VideoSection from './VideoSection';
+import { motion } from "motion/react"
 
 const MajorProject = ({projectDetail , oddOrEven}) => {
     let [ showYtVideo , setShowYtVideo] = useState(false);
@@ -10,7 +11,17 @@ const MajorProject = ({projectDetail , oddOrEven}) => {
         
         <div className='projectPhoto'>
             {/* <Tilt> */}
-            <img src={projectDetail.thumbnail} alt="project photo" width={200}/>
+            <motion.img src={projectDetail.thumbnail} alt="project photo" width={200}
+              initial={{
+                scale : 0.9
+              }}
+              whileHover={{
+                scale : 1
+              }}
+              whileTap={{
+                scale : 0.8
+              }}
+            />
             {/* </Tilt> */}
             <div style={{border:"none" , gap:"10px"}}>
                 <div onClick={() => setShowYtVideo(true)} style={{cursor: "pointer"}}>

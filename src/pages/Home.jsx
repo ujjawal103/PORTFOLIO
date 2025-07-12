@@ -4,14 +4,30 @@ import Typewriter from 'typewriter-effect';
 import Tilt from 'react-parallax-tilt';
 import SocialIcons from '../components/SocialIcons';
 import { Link } from "react-scroll";
+import { motion } from "motion/react"
 
 const Home = () => {
   return (
    <div className="home" id='home'>
      <div className='landing'>
-      {/* <Navbar /> */}
        <div className="content">
-        <h1>UJJAWAL KUMAR JAISWAL</h1>
+        <motion.h1
+        initial ={{
+          x:-600,
+        }}
+         animate={{
+          x : 0,
+          // y:200
+         }}
+         transition={{
+          delay : 0,
+          duration : 2,
+          rotate : 90,
+          ease : 'easeInOut'
+         }}
+        >
+          UJJAWAL KUMAR JAISWAL
+        </motion.h1>
         <h3>
           <Typewriter
                options={{
@@ -30,18 +46,47 @@ const Home = () => {
       </h3>
        <div className='resumeBox'>
           <a href="/resume.ujjawalJaiss.pdf" download="Ujjawal_Kumar_Jaiswal_Resume.pdf">
-            <button className='resume'>Download Resume <FiArrowDown /></button>
+            <motion.button className='resume'
+              animate={{
+                scale : 1.1,
+                
+              }}
+              whileHover={{
+                backgroundColor : "gray"
+              }}
+              transition={{
+                delay : 1,
+                duration : 1,
+                repeat : Infinity,
+                repeatType : 'reverse',
+                repeatDelay : 2,
+                ease : "circIn"
+              }}
+               >Download Resume <FiArrowDown />
+            </motion.button>
           </a>
           <button><Link to="about" smooth={true} duration={500}>About Me</Link><FiArrowRight /></button>
        </div>
          
        </div>
-      <Tilt>
+  <Tilt>
   <div className="logo-container">
     <div className="lightning-bg" />
-    <div className="logo">
+    <motion.div className="logo"
+       animate={{
+                scale : 0.9,
+                
+              }}
+              transition={{
+                delay : 1,
+                duration : 1,
+                repeat : Infinity,
+                repeatType : 'reverse',
+                ease : "circIn"
+              }}
+     >
       <img src="/logo.jpg" alt="img profile" />
-    </div>
+    </motion.div>
   </div>
 </Tilt>
     </div>

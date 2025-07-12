@@ -13,11 +13,22 @@ import Contact from './pages/Contact'
 import toast, { Toaster } from 'react-hot-toast';
 import SocialIcons from './components/SocialIcons'
 import Projects from './pages/Projects';
+import { motion , useScroll } from 'motion/react'
 
 
 const App = () => {
+  const scrollYProgress = useScroll().scrollYProgress
   return (
     <div className='app'>
+
+      <motion.div className="scrollMeasure"
+        style={{
+          scaleX : scrollYProgress,
+          transformOrigin: "left"
+        }}
+      >
+         
+      </motion.div>
        
       {/* <BrowserRouter>
          

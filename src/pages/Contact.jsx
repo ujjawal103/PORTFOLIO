@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import toast from 'react-hot-toast';
+import { motion } from "motion/react"
 
 const Contact = () => {
  const form = useRef();
@@ -32,9 +33,20 @@ const Contact = () => {
 
   return (
     <div className="contact" id='contact'>
-      <div className="contactImg">
-          <img src="/contact.png" alt="Connections" width={350} />
-      </div>
+      <motion.div className="contactImg">
+          <motion.img src="/contact.png" alt="Connections" width={350} 
+          drag
+          whileDrag={{
+          scale : 0.8
+          }}
+          dragConstraints={{
+          left : 0,
+          right : 50,
+          top : 20,
+          bottom : 0
+          }}
+        />
+      </motion.div>
       <div className="form">
         <form ref={form} onSubmit={sendEmail}>
           <input name="title" placeholder="Enter Role..." required />
