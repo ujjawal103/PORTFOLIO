@@ -5,7 +5,7 @@ import MinorProject from '../components/MinorProject'
 import Slider from "react-slick";
 // import MinorProject from './MinorProject';
 
-const Project = () => {
+const Projects = () => {
 
 
 
@@ -56,7 +56,7 @@ const settings = {
   )
 }
 
-export default Project
+export default Projects
 
 
 

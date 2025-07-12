@@ -1,7 +1,5 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 import { FiArrowDown, FiArrowRight } from 'react-icons/fi'
-import Project from './project'
 import Typewriter from 'typewriter-effect';
 import Tilt from 'react-parallax-tilt';
 import SocialIcons from '../components/SocialIcons';
