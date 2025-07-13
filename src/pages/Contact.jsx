@@ -35,16 +35,27 @@ const Contact = () => {
     <div className="contact" id='contact'>
       <motion.div className="contactImg">
           <motion.img src="/contact.png" alt="Connections" width={350} 
+          animate={{
+            x : [0 , 20 , 20 ,-20 ,0],
+            y : [0 , 0 , 20 , 0 , -20]
+          }}
+          transition={{
+            delay : 0.5,
+            duration : 2,
+            repeat : Infinity,
+            repeatType : 'reverse',
+          }}
           drag
           whileDrag={{
           scale : 0.8
           }}
-          dragConstraints={{
+          dragConstraints={{           //boundary while draging
           left : 0,
           right : 50,
           top : 20,
           bottom : 0
           }}
+          dragDirectionLock="true"        //now at a time only in a single direction (any) dragging
         />
       </motion.div>
       <div className="form">

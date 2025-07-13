@@ -3,10 +3,12 @@ import { majorProjects , minorProjects } from '../projectData'
 import MajorProject from '../components/MajorProject'
 import MinorProject from '../components/MinorProject'
 import Slider from "react-slick";
-// import MinorProject from './MinorProject';
+import { motion } from 'motion/react';
+import { useInView } from "react-intersection-observer";
+
 
 const Projects = () => {
-
+const { ref, inView } = useInView({ triggerOnce: true });
 
 
 const settings = {
@@ -33,7 +35,12 @@ const settings = {
 
 
   return (
-    <div id='projects'>
+    <motion.div id='projects'
+         ref={ref}
+         initial={{ y: 50, opacity: 0 }}
+         animate={inView ? { y: 0, opacity: 1 } : {}}
+         transition={{ duration: 1.4 }}
+    >
       <h2>Latest Works</h2>
       <div className="majorProjects">
          {
@@ -52,7 +59,7 @@ const settings = {
             }
           </Slider>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
